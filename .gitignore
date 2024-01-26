@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log
+
+# IDEs and Editors
+.vscode/
+.idea/
+
+# Logs and Databases
+*.log
+*.sqlite
+
+# Build and Compiled Files
+/dist/
+/build/
+*.min.js
+
+# OS generated files
+.DS_Store
+Thumbs.db

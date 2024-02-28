@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script defer src="/assets/js/main.js"></script>
-    <title>Document</title>
+    <title>WisePay Planner</title>
 </head>
 <body>
-    
+    <header>
+        <picture>
+            <img src="/assets/images/logo-dark-mode.svg" alt="Logo WisePay Planner para fondos oscuros">
+        </picture>
+    </header>
+    <main class="general-info">
+        <h1>Debt and Interest Payment Plan Calculator</h1>
+        <p>Debts can be challenging and scary. In this simple platform, you'll be able to calculate different types of debts in several situations. If you have any doubts, please check the help section.</p>
+    </main>
+    <section class="form-container">
+        <h2 class="header">Payment plan simulator</h2>
+        <p class="introduction">Enter the necessary data to calculate the amount of the monthly payment, effective monthly rate, total interest you will pay and the amount saved in case you make additional payments.</p>
+
+        <form class="form-debt-calculator" action="">
+            <label for="currency">
+                <span>Currency</span>
+                <br>
+                <input id="currency" list="currencies">
+                <datalist id="currencies">
+                    <option value="Bolívares Fuertes (VEF)"></option>
+                    <option value="Boliviano (BOB)"></option>
+                    <option value="Dólar Estadounidense (USD)"></option>
+                    <option value="Euro (EUR)"></option>
+                    <option value="Guaraní (PYG)"></option>
+                    <option value="Peso Argentino (ARS)"></option>
+                    <option value="Peso Chileno (CLP)"></option>
+                    <option value="Peso Uruguayo (UYU)"></option>
+                    <option value="Soles (PEN)"></option>
+                </datalist>
+            </label>
+        </form>
+
+    </section>
+
+    <script defer src="/assets/js/main.js"></script>
 </body>
 </html>

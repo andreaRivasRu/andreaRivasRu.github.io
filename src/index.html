@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Rubik:wght@300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
+    
     <title>WisePay Planner</title>
 </head>
 <body>
@@ -24,7 +30,7 @@
             <label for="currency">
                 <span>Currency</span>
                 <br>
-                <input id="currency" list="currencies">
+                <input id="currency" list="currencies" class="input" required placeholder="Select one option">
                 <datalist id="currencies">
                     <option value="Bolívares Fuertes (VEF)"></option>
                     <option value="Boliviano (BOB)"></option>
@@ -35,6 +41,40 @@
                     <option value="Peso Chileno (CLP)"></option>
                     <option value="Peso Uruguayo (UYU)"></option>
                     <option value="Soles (PEN)"></option>
+                </datalist>
+            </label>
+            <label for="total-amount">
+                <span>Total amount</span>
+                <br>
+                <input id="total-amount" type="number" class="input" required>
+            </label>
+            <label for="annual-interest-rate">
+                <span>Annual interest rate</span>
+                <br>
+                <input id="annual-interest-rate" type="number" class="input" required>
+            </label>
+            <label for="payment-period-in-months">
+                <span>Payment period in months</span>
+                <br>
+                <input id="payment-period-in-months" type="number" class="input" required>
+            </label>
+            <label for="additional-credits">
+                <span>Additional credits</span>
+                <br>
+                <input id="additional-credits" type="checkbox" class="input-checkbox">
+            </label>
+            <label for="additional-credits-amount" class="inactive">
+                <span>Additional credits amount</span>
+                <br>
+                <input id="additional-credits-amount" type="number" class="input">
+            </label>
+            <label for="goal" class="inactive">
+                <span>Goals</span>
+                <br>
+                <input id="goal" list="goals" class="input" placeholder="Select one option">
+                <datalist id="goals">
+                    <option value="Reducir plazo"></option>
+                    <option value="Reducir monto de la deuda"></option>
                 </datalist>
             </label>
         </form>

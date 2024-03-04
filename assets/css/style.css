@@ -1,0 +1,42 @@
+:root {
+    --dark-background: #2A224F;
+    --midnight: #1F1E33;
+    --dark-indigo: #2F2B52;
+    --deep-lavender: #3F3E5E;
+    --light-background: #f7f7f7;
+    --light-gray: #DDDCE0;
+    --lavender: #8C87A8;
+    --pale-lilac: #B6B0D3;
+    --accent-purple: #7B65E9;
+    --white: #ffffff;
+    --black: #000000;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+  
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+}
+
+.title-fredoka {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.inactive {
+    display: none;
+}

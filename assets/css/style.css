@@ -1,3 +1,4 @@
+/*Global*/
 :root {
     --dark-background: #2A224F;
     --midnight: #1F1E33;
@@ -10,9 +11,9 @@
     --accent-purple: #7B65E9;
     --white: #ffffff;
     --black: #000000;
-    --sm: 14px;
-    --md: 16px;
-    --lg: 18px;
+    --sm: 1.4rem;
+    --md: 2.0rem;
+    --lg: 2.4rem;
 }
 
 * {
@@ -27,16 +28,61 @@ html {
 
 body {
     font-family: "Rubik", sans-serif;
+    font-size: var(--sm);
 }
 
-.title-fredoka {
-    font-family: "Fredoka", sans-serif;
+p {
+    line-height: 1.4;
+}
+
+.title-lg {
+    font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
-    font-weight: bold;
+    font-weight: 600;
     font-style: normal;
-    font-variation-settings: "wdth" 100;
+    font-size: var(--lg);
+}
+
+.title-md {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: var(--md);
 }
 
 .inactive {
     display: none;
+}
+
+/*Nav*/
+nav {
+    background-color: var(--dark-background);
+    padding: 1rem 2rem;
+}
+
+.logo img {
+    width: 8rem;
+}
+
+/*Main*/
+.general-info {
+    background-color: var(--dark-background);
+    padding: 1rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.general-info h1 {
+    color: var(--light-background);
+    max-width: 90%;
+    text-align: center;
+}
+
+.general-info p {
+    color: var(--pale-lilac);
+    max-width: 80%;
+    text-align: center;
 }

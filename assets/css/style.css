@@ -57,6 +57,28 @@ html .inactive {
     display: none;
 }
 
+.primary-button {
+    background-color: var(--accent-purple);
+    width: 100%;
+    font-size: var(--md);
+    font-weight: 600;
+    color: var(--light-background);
+    padding: 1.4rem;
+    border-radius: 0.8rem;
+    border: none;
+}
+
+.secondary-button {
+    background-color: var(--midnight);
+    width: 100%;
+    font-size: var(--md);
+    font-weight: 600;
+    color: var(--light-background);
+    padding: 1.4rem;
+    border-radius: 0.8rem;
+    border: none;
+}
+
 /*Nav*/
 nav {
     background-color: var(--dark-background);

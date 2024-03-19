@@ -166,10 +166,63 @@ nav {
     padding: 1.4rem;
     border-radius: 0.8rem;
     border: 0.2rem solid var(--light-gray);
+    outline: none;
+}
+
+.input:focus {
+    border: 0.2rem solid var(--dark-indigo);
+    outline: none;
 }
 
 .input::placeholder {
     color: rgba(63, 62, 94, 40%);
+}
+
+.form-debt-calculator .switch-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label .lbl-switch {
+    display: inline-block;
+    width: 6rem;
+    height: 3.2rem;
+    background-color: var(--light-gray);
+    border-radius: 10rem;
+    position: relative;
+    cursor: pointer;
+}
+
+label .lbl-switch:after {
+    position: absolute;
+    content: '';
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: var(--white);
+    border-radius: 10rem;
+    top: 0.4rem;
+    left: 0.4rem;
+    transition: 0.3s;
+}
+
+label .input-checkbox {
+    display: none;
+}
+
+.input-checkbox:checked~ .lbl-switch {
+    background-color: var(--accent-purple);
+}
+
+.input-checkbox:checked~ .lbl-switch:after {
+    left: 3.2rem;
+}
+
+span .required {
+    color: rgb(244, 52, 31);
+    font-size: var(--lg);
+    font-weight: 300;
 }
 
 /*Results section*/

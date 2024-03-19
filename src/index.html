@@ -28,9 +28,9 @@
             <h2 class="title-md">Payment plan simulator</h2>
             <p>Enter the necessary data to calculate the amount of the monthly payment, effective monthly rate, total interest you will pay and the amount saved in case you make additional payments.</p>
     
-            <form class="form-debt-calculator" action="">
+            <form class="form-debt-calculator" action="#">
                 <label for="currency">
-                    <span>Currency</span>
+                    <span>Currency <span class="required">*</span></span>
                     <br>
                     <input id="currency" list="currencies" class="input" required placeholder="Select one option">
                     <datalist id="currencies">
@@ -46,24 +46,24 @@
                     </datalist>
                 </label>
                 <label for="total-amount">
-                    <span>Total amount</span>
+                    <span>Total amount <span class="required">*</span></span>
                     <br>
                     <input id="total-amount" type="number" class="input" required>
                 </label>
                 <label for="annual-interest-rate">
-                    <span>Annual interest rate</span>
+                    <span>Annual interest rate <span class="required">*</span></span>
                     <br>
                     <input id="annual-interest-rate" type="number" class="input" required>
                 </label>
                 <label for="payment-period-in-months">
-                    <span>Payment period in months</span>
+                    <span>Payment period in months <span class="required">*</span></span>
                     <br>
                     <input id="payment-period-in-months" type="number" class="input" required>
                 </label>
-                <label for="additional-credits">
+                <label for="additional-credits" class="switch-container">
                     <span>Additional credits</span>
-                    <br>
                     <input id="additional-credits" type="checkbox" class="input-checkbox">
+                    <label for="additional-credits" class="lbl-switch"></label>
                 </label>
                 <label for="additional-credits-amount" class="inactive">
                     <span>Additional credits amount</span>

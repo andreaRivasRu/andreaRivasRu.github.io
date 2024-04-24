@@ -29,10 +29,10 @@
             <p>Enter the necessary data to calculate the amount of the monthly payment, effective monthly rate, total interest you will pay and the amount saved in case you make additional payments.</p>
     
             <form class="form-debt-calculator" action="#">
-                <label for="currency">
+                <!-- <label for="currency">
                     <span>Currency <span class="required">*</span></span>
                     <br>
-                    <input id="currency" list="currencies" class="input" required placeholder="Select one option">
+                    <input id="currency" list="currencies" class="input" required placeholder="Select an option">
                     <datalist id="currencies">
                         <option value="Bolívares Fuertes (VEF)"></option>
                         <option value="Boliviano (BOB)"></option>
@@ -44,21 +44,21 @@
                         <option value="Peso Uruguayo (UYU)"></option>
                         <option value="Soles (PEN)"></option>
                     </datalist>
-                </label>
+                </label> -->
                 <label for="total-amount">
                     <span>Total amount <span class="required">*</span></span>
                     <br>
-                    <input id="total-amount" type="number" class="input" required>
+                    <input id="total-amount" type="number" class="input" required placeholder="$">
                 </label>
                 <label for="annual-interest-rate">
                     <span>Annual interest rate <span class="required">*</span></span>
                     <br>
-                    <input id="annual-interest-rate" type="number" class="input" required>
+                    <input id="annual-interest-rate" type="text" class="input" required placeholder="%">
                 </label>
                 <label for="payment-period-in-months">
                     <span>Payment period in months <span class="required">*</span></span>
                     <br>
-                    <input id="payment-period-in-months" type="number" class="input" required>
+                    <input id="payment-period-in-months" type="number" class="input" required placeholder="0">
                 </label>
                 <label for="additional-credits" class="switch-container">
                     <span>Additional credits</span>
@@ -68,7 +68,7 @@
                 <label for="additional-credits-amount" class="inactive">
                     <span>Additional credits amount</span>
                     <br>
-                    <input id="additional-credits-amount" type="number" class="input">
+                    <input id="additional-credits-amount" type="number" class="input" placeholder="$">
                 </label>
                 <label for="goal" class="inactive">
                     <span>Goals</span>

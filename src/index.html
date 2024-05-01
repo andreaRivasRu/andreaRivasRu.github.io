@@ -67,12 +67,12 @@
                     <input id="additional-credits" type="checkbox" class="input-checkbox">
                     <label for="additional-credits" class="lbl-switch"></label>
                 </label>
-                <label for="additional-credits-amount" class="inactive">
+                <label for="additional-credits-amount" id="additional-credits-amount-label" class="inactive">
                     <span>Additional credits amount</span>
                     <br>
                     <input id="additional-credits-amount" type="number" class="input" placeholder="$">
                 </label>
-                <label for="goal" class="inactive">
+                <!-- <label for="goal" class="inactive">
                     <span>Goals</span>
                     <br>
                     <input id="goal" list="goals" class="input" placeholder="Select one option">
@@ -80,7 +80,7 @@
                         <option value="Reducir plazo"></option>
                         <option value="Reducir monto de la deuda"></option>
                     </datalist>
-                </label>
+                </label> -->
                 <input type="submit" value="Calcular" class="primary-button">
             </form>
         </section>
@@ -93,14 +93,22 @@
                 <p class="description-main-result">Amount of monthly payment</p>
                 <p class="big-num" id="amount-monthly-payment">-</p>
             </div>
+            <div id="total-interest-with-additional-credits-container" class="result-container inactive">
+                <p class="description-main-result">Total interest with additional payment</p>
+                <p class="big-num" id="total-interest-with-additional-credits">-</p>
+            </div>
     
             <div class="divider-line"></div>
-    
+            
+            <div id="new-period-in-months-container" class="result-container inactive">
+                <p class="description-secondary-result">Payment period in months with additional payment</p>
+                <p class="med-num" id="new-period-in-months">-</p>
+            </div>
             <div class="result-container">
                 <p class="description-secondary-result">Total interest</p>
                 <p class="med-num" id="total-interest">-</p>
             </div>
-            <div class="result-container inactive">
+            <div id="amount-saved-container" class="result-container inactive">
                 <p class="description-secondary-result">Amount saved</p>
                 <p class="med-num" id="amount-saved">-</p>
             </div>
@@ -109,9 +117,9 @@
                 <p class="med-num" id="effective-monthly-rate">-</p>
             </div>
     
-            <div class="divider-line"></div>
+            <!-- <div class="divider-line"></div>
 
-            <p>Distribution of payments among monthly payments</p>
+            <p>Distribution of payments among monthly payments</p> -->
 
 
         </aside>

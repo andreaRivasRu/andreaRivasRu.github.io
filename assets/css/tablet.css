@@ -2,8 +2,9 @@
     max-width: 40rem;
 }
 
-html .inactive {
+html .main-container > .inactive {
     display: flex;
+    flex-direction: column;
 }
 
 .main-container {

@@ -8,11 +8,18 @@ const annualInterestRate = document.getElementById('annual-interest-rate');
 const paymentPeriodInMonths = document.getElementById('payment-period-in-months');
 const additionalCredits = document.getElementById('additional-credits');
 const additionalCreditsAmount = document.getElementById('additional-credits-amount');
+const additionalCreditsAmountLabel = document.getElementById('additional-credits-amount-label');
 
 // Show results
 const totalResultsContainer = document.querySelector('.total-results-container')
 
+const totalInterestWithAdditionalCreditsContainer = document.querySelector('#total-interest-with-additional-credits-container');
+const newPeriodInMonthsContainer = document.querySelector('#new-period-in-months-container');
+const amountSavedContainer = document.querySelector('#amount-saved-container');
+
 const amountMonthlyPayment = document.getElementById('amount-monthly-payment');
+const totalInterestWithAdditionalCredits = document.getElementById('total-interest-with-additional-credits');
+const newPeriodInMonths = document.getElementById('new-period-in-months');
 const totalInterest = document.getElementById('total-interest');
 const amountSaved = document.getElementById('amount-saved');
 const effectiveMonthlyRate = document.getElementById('effective-monthly-rate');
@@ -39,8 +46,11 @@ function calcTotalInterest(totalAmount, monthlyPayment, paymentPeriodInMonths) {
     return (monthlyPayment * paymentPeriodInMonths) - totalAmount;
 }
 
+
+
 // Listen for form submission
 formDebtCalculator.addEventListener('submit', displayResults);
+additionalCredits.addEventListener('change', showAmountInput);
 
 function displayResults(event) {
 
@@ -51,7 +61,8 @@ function displayResults(event) {
     const totalAmountValue = parseFloat(totalAmount.value);
     const annualInterestRateValue = parseFloat(annualInterestRate.value) / 100;
     const paymentPeriodInMonthsValue = parseInt(paymentPeriodInMonths.value);
-    const additionalCreditsChecked = additionalCredits.ariaChecked;
+    const additionalCreditsChecked = additionalCredits.checked;
+    const additionalCreditsAmountValue = parseInt(additionalCreditsAmount.value);
 
     //calcular interes mensual
     const monthlyRateValue = calcMonthlyRate(annualInterestRateValue);
@@ -69,6 +80,23 @@ function displayResults(event) {
     totalInterest.innerText = `${Math.round(totalInterestValue)} $`;
     effectiveMonthlyRate.innerText = `${monthlyRateValue.toFixed(4) * 100} %`;
 
-
+    if (additionalCreditsChecked) {
+        totalInterestWithAdditionalCreditsContainer.classList.remove('inactive');
+        newPeriodInMonthsContainer.classList.remove('inactive');
+        amountSavedContainer.classList.remove('inactive');
+        
+    }
+    
     totalResultsContainer.classList.remove('inactive');
+}
+
+function showAmountInput(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    if (additionalCredits.checked) {
+        additionalCreditsAmountLabel.classList.remove('inactive');
+    } else {
+        additionalCreditsAmountLabel.classList.add('inactive');
+    }
 }

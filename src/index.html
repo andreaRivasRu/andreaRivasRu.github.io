@@ -28,7 +28,7 @@
     <main class="main-container">
         <section class="form-container">
             <h2 class="title-md">Payment plan simulator</h2>
-            <p>Enter the necessary data to calculate the amount of the monthly payment, effective monthly rate, total interest you will pay and the amount saved in case you make additional payments.</p>
+            <p>Enter the necessary data to calculate the amount of the monthly payment, effective monthly rate and total interest you will pay</p>
     
             <form class="form-debt-calculator" action="#">
                 <!-- <label for="currency">
@@ -62,7 +62,7 @@
                     <br>
                     <input id="payment-period-in-months" type="number" class="input" required placeholder="0">
                 </label>
-                <label for="additional-credits" class="switch-container">
+                <!-- <label for="additional-credits" class="switch-container">
                     <span>Additional credits</span>
                     <input id="additional-credits" type="checkbox" class="input-checkbox">
                     <label for="additional-credits" class="lbl-switch"></label>
@@ -71,7 +71,7 @@
                     <span>Additional credits amount</span>
                     <br>
                     <input id="additional-credits-amount" type="number" class="input" placeholder="$">
-                </label>
+                </label> -->
                 <!-- <label for="goal" class="inactive">
                     <span>Goals</span>
                     <br>
@@ -93,25 +93,25 @@
                 <p class="description-main-result">Amount of monthly payment</p>
                 <p class="big-num" id="amount-monthly-payment">-</p>
             </div>
-            <div id="total-interest-with-additional-credits-container" class="result-container inactive">
+            <!-- <div id="total-interest-with-additional-credits-container" class="result-container inactive">
                 <p class="description-main-result">Total interest with additional payment</p>
                 <p class="big-num" id="total-interest-with-additional-credits">-</p>
-            </div>
+            </div> -->
     
             <div class="divider-line"></div>
             
-            <div id="new-period-in-months-container" class="result-container inactive">
+            <!-- <div id="new-period-in-months-container" class="result-container inactive">
                 <p class="description-secondary-result">Payment period in months with additional payment</p>
                 <p class="med-num" id="new-period-in-months">-</p>
-            </div>
+            </div> -->
             <div class="result-container">
                 <p class="description-secondary-result">Total interest</p>
                 <p class="med-num" id="total-interest">-</p>
             </div>
-            <div id="amount-saved-container" class="result-container inactive">
+            <!-- <div id="amount-saved-container" class="result-container inactive">
                 <p class="description-secondary-result">Amount saved</p>
                 <p class="med-num" id="amount-saved">-</p>
-            </div>
+            </div> -->
             <div class="result-container">
                 <p class="description-secondary-result">Effective monthly rate</p>
                 <p class="med-num" id="effective-monthly-rate">-</p>

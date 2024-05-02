@@ -26,8 +26,7 @@ const effectiveMonthlyRate = document.getElementById('effective-monthly-rate');
 
 // Functions to calculate debt
 function calcMonthlyRate(annualRate) {
-    const monthlyRate = annualRate / 12;
-    return monthlyRate;
+    return annualRate / 12;
 }
 
 function calcMonthlyPayment(totalAmount, monthlyRate, paymentPeriodInMonths) {
@@ -46,6 +45,28 @@ function calcTotalInterest(totalAmount, monthlyPayment, paymentPeriodInMonths) {
     return (monthlyPayment * paymentPeriodInMonths) - totalAmount;
 }
 
+// function calcTotalInterestWithAdditionalCredits(totalAmount, monthlyPayment, annualInterestRate, paymentPeriodInMonths, additionalPayment) {
+//     let balance = totalAmount;
+//     let totalInterest = 0;
+//     let totalPayments = 0;
+
+//     while (balance > 0 && totalPayments < paymentPeriodInMonths) {
+//         let interest = balance * calcMonthlyRate(annualInterestRate);
+
+//         let amortization = monthlyPayment + additionalPayment - interest;
+//         amortization = Math.min(amortization, balance);
+
+//         balance -= amortization;
+//         totalInterest += interest;
+//         totalPayments++;
+//     }
+
+//     return totalInterest;
+// }
+
+// function calcAmountSaved(totalInterest, totalInterestWithAdditionalCredits) {
+//     return totalInterest - totalInterestWithAdditionalCredits;
+// }
 
 
 // Listen for form submission
@@ -61,8 +82,8 @@ function displayResults(event) {
     const totalAmountValue = parseFloat(totalAmount.value);
     const annualInterestRateValue = parseFloat(annualInterestRate.value) / 100;
     const paymentPeriodInMonthsValue = parseInt(paymentPeriodInMonths.value);
-    const additionalCreditsChecked = additionalCredits.checked;
-    const additionalCreditsAmountValue = parseInt(additionalCreditsAmount.value);
+    // const additionalCreditsChecked = additionalCredits.checked;
+    // const additionalCreditsAmountValue = parseInt(additionalCreditsAmount.value);
 
     //calcular interes mensual
     const monthlyRateValue = calcMonthlyRate(annualInterestRateValue);
@@ -73,30 +94,37 @@ function displayResults(event) {
     //calcular intereses totales
     const totalInterestValue = calcTotalInterest(totalAmountValue, monthlyPaymentValue, paymentPeriodInMonthsValue);
 
-    //calcular monto ahorrado
+    // //calcular intereses con abono
+    // const totalInterestWithAdditionalCreditsValue = calcTotalInterestWithAdditionalCredits(totalAmountValue, monthlyPaymentValue, annualInterestRateValue, paymentPeriodInMonthsValue, additionalCreditsAmountValue);
+
+    // //calcular monto ahorrado
+    // const amountSavedValue = calcAmountSaved(totalInterestValue, totalInterestWithAdditionalCreditsValue);
 
     // Display the results
     amountMonthlyPayment.innerText = `${Math.round(monthlyPaymentValue)} $`;
+    // totalInterestWithAdditionalCredits.innerText = `${Math.round(totalInterestWithAdditionalCreditsValue)} $`;
     totalInterest.innerText = `${Math.round(totalInterestValue)} $`;
     effectiveMonthlyRate.innerText = `${monthlyRateValue.toFixed(4) * 100} %`;
+    // amountSaved.innerText = `${Math.round(amountSavedValue)} $`;
+    
 
-    if (additionalCreditsChecked) {
-        totalInterestWithAdditionalCreditsContainer.classList.remove('inactive');
-        newPeriodInMonthsContainer.classList.remove('inactive');
-        amountSavedContainer.classList.remove('inactive');
+    // if (additionalCreditsChecked) {
+    //     totalInterestWithAdditionalCreditsContainer.classList.remove('inactive');
+    //     newPeriodInMonthsContainer.classList.remove('inactive');
+    //     amountSavedContainer.classList.remove('inactive');
         
-    }
+    // }
     
     totalResultsContainer.classList.remove('inactive');
 }
 
-function showAmountInput(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+// function showAmountInput(event) {
+//     // Prevent the default form submission behavior
+//     event.preventDefault();
 
-    if (additionalCredits.checked) {
-        additionalCreditsAmountLabel.classList.remove('inactive');
-    } else {
-        additionalCreditsAmountLabel.classList.add('inactive');
-    }
-}
+//     if (additionalCredits.checked) {
+//         additionalCreditsAmountLabel.classList.remove('inactive');
+//     } else {
+//         additionalCreditsAmountLabel.classList.add('inactive');
+//     }
+// }

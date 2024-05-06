@@ -30,6 +30,7 @@ function calcMonthlyRate(annualRate) {
 }
 
 function calcMonthlyPayment(totalAmount, monthlyRate, paymentPeriodInMonths) {
+    // Initialization of monthly payment 
     let monthlyPayment;
 
     if (monthlyRate === 0) {
@@ -45,29 +46,6 @@ function calcTotalInterest(totalAmount, monthlyPayment, paymentPeriodInMonths) {
     return (monthlyPayment * paymentPeriodInMonths) - totalAmount;
 }
 
-// function calcTotalInterestWithAdditionalCredits(totalAmount, monthlyPayment, annualInterestRate, paymentPeriodInMonths, additionalPayment) {
-//     let balance = totalAmount;
-//     let totalInterest = 0;
-//     let totalPayments = 0;
-
-//     while (balance > 0 && totalPayments < paymentPeriodInMonths) {
-//         let interest = balance * calcMonthlyRate(annualInterestRate);
-
-//         let amortization = monthlyPayment + additionalPayment - interest;
-//         amortization = Math.min(amortization, balance);
-
-//         balance -= amortization;
-//         totalInterest += interest;
-//         totalPayments++;
-//     }
-
-//     return totalInterest;
-// }
-
-// function calcAmountSaved(totalInterest, totalInterestWithAdditionalCredits) {
-//     return totalInterest - totalInterestWithAdditionalCredits;
-// }
-
 
 // Listen for form submission
 formDebtCalculator.addEventListener('submit', displayResults);
@@ -82,49 +60,21 @@ function displayResults(event) {
     const totalAmountValue = parseFloat(totalAmount.value);
     const annualInterestRateValue = parseFloat(annualInterestRate.value) / 100;
     const paymentPeriodInMonthsValue = parseInt(paymentPeriodInMonths.value);
-    // const additionalCreditsChecked = additionalCredits.checked;
-    // const additionalCreditsAmountValue = parseInt(additionalCreditsAmount.value);
 
-    //calcular interes mensual
+    // Get monthly rate value
     const monthlyRateValue = calcMonthlyRate(annualInterestRateValue);
 
-    //calcular monto de la cuota
+    // Get monthly payment amount value
     const monthlyPaymentValue = calcMonthlyPayment(totalAmountValue, monthlyRateValue, paymentPeriodInMonthsValue);
 
-    //calcular intereses totales
+    // Get total interest value
     const totalInterestValue = calcTotalInterest(totalAmountValue, monthlyPaymentValue, paymentPeriodInMonthsValue);
-
-    // //calcular intereses con abono
-    // const totalInterestWithAdditionalCreditsValue = calcTotalInterestWithAdditionalCredits(totalAmountValue, monthlyPaymentValue, annualInterestRateValue, paymentPeriodInMonthsValue, additionalCreditsAmountValue);
-
-    // //calcular monto ahorrado
-    // const amountSavedValue = calcAmountSaved(totalInterestValue, totalInterestWithAdditionalCreditsValue);
 
     // Display the results
     amountMonthlyPayment.innerText = `${Math.round(monthlyPaymentValue)} $`;
-    // totalInterestWithAdditionalCredits.innerText = `${Math.round(totalInterestWithAdditionalCreditsValue)} $`;
     totalInterest.innerText = `${Math.round(totalInterestValue)} $`;
     effectiveMonthlyRate.innerText = `${monthlyRateValue.toFixed(4) * 100} %`;
-    // amountSaved.innerText = `${Math.round(amountSavedValue)} $`;
     
-
-    // if (additionalCreditsChecked) {
-    //     totalInterestWithAdditionalCreditsContainer.classList.remove('inactive');
-    //     newPeriodInMonthsContainer.classList.remove('inactive');
-    //     amountSavedContainer.classList.remove('inactive');
-        
-    // }
     
     totalResultsContainer.classList.remove('inactive');
 }
-
-// function showAmountInput(event) {
-//     // Prevent the default form submission behavior
-//     event.preventDefault();
-
-//     if (additionalCredits.checked) {
-//         additionalCreditsAmountLabel.classList.remove('inactive');
-//     } else {
-//         additionalCreditsAmountLabel.classList.add('inactive');
-//     }
-// }
